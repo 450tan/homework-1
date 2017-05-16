@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <main class="container-fluid">
 	    <div class="row">
 		   <div class="col-md-10">
-		      <s:form action="book/book_addBook" cssClass="form-horizontal" method="post">
+		      <s:form action="book/book_addBook" cssClass="form-horizontal" method="post" enctype="multipart/form-data">
 		       <div class="panel panel-success">
 			       <div class="panel-heading">
 		               <h4 class="panel-title"> <i class="fa fa-cutlery"></i> 添 加 书 籍</h4>
@@ -97,12 +97,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                               <input type="text" name="book.unitprice" class="form-control input-sm" placeholder="&yen;" required>
                             </div>
 			           </div>
-			           <div class="form-group">
-			                <label class="control-label col-md-3">书籍内容</label>
-			                <div class="col-md-2">
-                              <input type="text" name="book.context" class="form-control input-sm" placeholder="&yen;" required>
-                            </div>
-			           </div>
 			            <div class="form-group">
 			                <label class="control-label col-md-3">书籍文案</label>
 			                <div class="col-md-2">
@@ -130,7 +124,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			           <div class="form-group col-md-3">
 				          <button type="submit" class="btn btn-success pull-right">提  交 </button>
 				       </div>
-				       
 				   </div>
 				</div>
 		    </s:form>

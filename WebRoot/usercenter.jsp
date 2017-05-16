@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <!--left-->
          <div class="left" id="c_left">
            <div class="s_tuijian">
-           <h2>个人<span>作品书架</span></h2>
+           <h2>我的<span>小说书架</span></h2>
            </div>
             
           <div class="content_text">

@@ -44,8 +44,8 @@
 			<result name="show_view">/main.jsp</result>
 			<result name="detail_view">/detail.jsp</result>
 			<result name="edit_view">/editbook.jsp</result>
-			<result name="delete_message">/delete_message.jsp</result>
-			<result name="edit_message">/edit_message.jsp</result>
+			<result name="delete_message">/main.jsp</result>	
+			<result name="edit_message">/edit_message.jsp</result>  
 			<result name="input">/add_jsp.jsp</result>
 			<result name="success">/detail.jsp</result>
 		</action>
@@ -85,6 +85,7 @@
 	 <package name="write" namespace="/write" extends="default" >
         <action name="write_*" class="writeAction" method="{1}">
             <result name="write_message">/write_message.jsp</result>
+            <result name="delete_message_write">/delete_message.jsp</result>
             <result name="show_view">/authorcenter.jsp</result>
             <result name="detail_view">/write_detail.jsp</result>
         </action>  
@@ -93,7 +94,7 @@
 			<result name="show_view">/main.jsp</result>
 			<result name="detail_view">/detail.jsp</result>
 			<result name="edit_view">/editbook.jsp</result>
-			<result name="delete_message">/delete_message.jsp</result>
+			<result name="delete_message">/main.jsp</result>
 			<result name="edit_message">/edit_message.jsp</result>
 			<result name="input">/add_jsp.jsp</result>
 			<result name="success">/detail.jsp</result>

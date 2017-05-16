@@ -21,7 +21,7 @@
         </property>
         <set name="writes" inverse="true">
             <key>
-                <column name="author" not-null="true" />
+                <column name="author" />
             </key>
             <one-to-many class="com.home.model.Write" />
         </set>

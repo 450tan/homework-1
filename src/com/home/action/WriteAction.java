@@ -90,8 +90,9 @@ public class WriteAction extends ActionSupport{
     
     /*删除write*/
     public String deleteWrite() throws Exception {
-    	writeDao.deleteWrite(book.getBookid());
-        return "delete_message";
+//    	writeDao.deleteWrite(book.getBookid());
+    	writeDao.deleteWrite(write.getWriteid());
+        return "delete_message_write";
     }
     
     /*查询write*/

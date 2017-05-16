@@ -10,11 +10,11 @@
             <column name="orderid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="book" class="com.home.model.Book" fetch="select"  lazy="false" cascade="save-update,persist">
-            <column name="book" not-null="true" />
+        <many-to-one name="book" class="com.home.model.Book" fetch="select" lazy="false">
+            <column name="book" />
         </many-to-one>
-        <many-to-one name="user" class="com.home.model.User" fetch="select"  lazy="false" cascade="save-update,persist">
-            <column name="user" not-null="true"  />
+        <many-to-one name="user" class="com.home.model.User" fetch="select" lazy="false">
+            <column name="user" />
         </many-to-one>
     </class>
 </hibernate-mapping>

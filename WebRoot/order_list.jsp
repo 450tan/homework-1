@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	         <s:iterator value="orderList" status="status">
 	          <tr>
 	            <td><s:property value="#status.index+1"></s:property></td>
-	            <td> <s:property value="book.bookname"></s:property></td>
+	            <td><s:property value="book.bookname"></s:property></td>
 	            <td><s:property value="book.author"></s:property></td>
 	            <td><s:property value="book.unitprice"></s:property></td>
 	            <td><<s:a href="order/order_showDetail?order.orderid=%{orderid}">阅读</s:a></td>

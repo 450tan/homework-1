@@ -22,9 +22,6 @@
         <property name="bookwenan" type="java.lang.String">
             <column name="bookwenan" />
         </property>
-        <property name="context" type="java.lang.String">
-            <column name="context" />
-        </property>
         <property name="unitprice" type="java.lang.Double">
             <column name="unitprice" precision="22" scale="0" />
         </property>
@@ -33,13 +30,13 @@
         </property>
         <set name="writes" inverse="true">
             <key>
-                <column name="book" not-null="true" />
+                <column name="book" />
             </key>
             <one-to-many class="com.home.model.Write" />
         </set>
         <set name="orders" inverse="true">
             <key>
-                <column name="book" not-null="true" />
+                <column name="book" />
             </key>
             <one-to-many class="com.home.model.Order" />
         </set>

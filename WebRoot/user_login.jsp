@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<s:submit value="登录" cssClass="btn_zhuce"></s:submit>
 					</s:form>
 						</div>
-						<div><a href="#">忘记密码？</a><input name="" type="checkbox" value="" checked><span>记住我</span></div> 
+						<div><a href="#">忘记密码？</a><input name="" type="checkbox" value="" checked="checked"><span>记住我</span></div> 
 				</div>
 				<div class="bj_right">
 					<p>使用以下账号直接登录</p>

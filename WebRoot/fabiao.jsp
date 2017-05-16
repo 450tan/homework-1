@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   <a href="write/write_addWrite?book.bookid=${book.bookid}&author.authorname=${author.authorname}">发表</a> <br>
+   <a href="write/write_addWrite?book.bookid=${book.bookid}&author.authorname=${author.authorname}">保存</a> <br>
   </body>
 </html>

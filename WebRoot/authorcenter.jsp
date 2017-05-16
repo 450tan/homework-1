@@ -62,8 +62,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <span class="left author"><s:property value="book.author"/></span><span class="left sj">时间:2014-8-9</span>
                <span class="left fl">分类:<a href="#" title="学无止境"><s:property value="book.booktype"/></a></span>
                <span class="left yd"><a href="book/book_showEdit?book.bookid=${book.bookid}">编辑</a></span>
-	            <span class="left yd"><a href="book/book_deleteBook?book.bookid=${book.bookid}" onclick="return confirm('确认删除？');">删除</a>  
-               </span>
+	            <span class="left yd">
+	          <!--    <a href="book/book_deleteBook?book.bookid=${book.bookid}" onclick="return confirm('确认删除？');">删除</a>  
+               -->
+             <a href="write/write_deleteWrite?write.writeid=<s:property value='writeid'/>&&book.bookid=${book.bookid}">删除</a>  
+                            </span>
                 <div class="clear"></div>
                </p>
                </dd>

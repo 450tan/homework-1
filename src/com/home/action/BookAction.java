@@ -26,9 +26,8 @@ public class BookAction extends ActionSupport{
 	 /*业务层对象*/
     @Resource BookDao bookDao;
     @Resource AuthorDao authorDao;
-    private Author author;
 	private String bookPhotoContentType;
-	private String bookPhoto;
+	private File bookPhoto;
 	private String bookPhotoFileName;
     private Book book;
 
@@ -68,14 +67,6 @@ public class BookAction extends ActionSupport{
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-    
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
 	}
     
 	

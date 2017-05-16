@@ -25,10 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="bj_bai">
             <h3>欢迎作者注册</h3>
        	  	   <s:form action="author/author_reg" method="post">
-						<s:textfield name="author.authorname" placeholder="帐号" cssClass="kuang_txt phone" required></s:textfield>
-						<s:password name="author.password" placeholder="密码" cssClass="kuang_txt possword" v></s:password>
+						<s:textfield name="author.authorname" placeholder="帐号" cssClass="kuang_txt phone" required="true"></s:textfield>
+						<s:password name="author.password" placeholder="密码" cssClass="kuang_txt possword" ></s:password>
 						<s:textfield name="author.authorjianjie" placeholder="简介" cssClass="kuang_txt phone"></s:textfield>
-                        <s:textfield name="yanz" placeholder="验证码" cssClass="kuang_txt yanzm" value="HLL" required></s:textfield>
+                        <s:textfield name="yanz" placeholder="验证码" cssClass="kuang_txt yanzm" value="HLL" required="true"></s:textfield>
                         <s:submit value="注册" cssClass="btn_zhuce"></s:submit>
 					</s:form>
                 <div>

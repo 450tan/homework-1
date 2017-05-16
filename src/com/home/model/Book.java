@@ -16,7 +16,6 @@ public class Book implements java.io.Serializable {
 	private String author;
 	private String booktype;
 	private String bookwenan;
-	private String context;
 	private Double unitprice;
 	private String picture;
 	private Set writes = new HashSet(0);
@@ -30,13 +29,12 @@ public class Book implements java.io.Serializable {
 
 	/** full constructor */
 	public Book(String bookname, String author, String booktype,
-			String bookwenan, String context, Double unitprice, String picture,
-			Set writes, Set orders) {
+			String bookwenan, Double unitprice, String picture, Set writes,
+			Set orders) {
 		this.bookname = bookname;
 		this.author = author;
 		this.booktype = booktype;
 		this.bookwenan = bookwenan;
-		this.context = context;
 		this.unitprice = unitprice;
 		this.picture = picture;
 		this.writes = writes;
@@ -83,14 +81,6 @@ public class Book implements java.io.Serializable {
 
 	public void setBookwenan(String bookwenan) {
 		this.bookwenan = bookwenan;
-	}
-
-	public String getContext() {
-		return this.context;
-	}
-
-	public void setContext(String context) {
-		this.context = context;
 	}
 
 	public Double getUnitprice() {

@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <header>
     <div class="head">
-       <div class="logo"><i class="fa fa-ul fa-cutlery"></i> 添加书籍</div>
+       <div class="logo"><i class="fa fa-ul fa-cutlery"></i> 添加章节</div>
        <div class="block yh f13">
          <p class="tright">
 				<c:choose>
@@ -70,57 +70,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      <s:form action="book/book_addBook" cssClass="form-horizontal" method="post" enctype="multipart/form-data">
 		       <div class="panel panel-success">
 			       <div class="panel-heading">
-		               <h4 class="panel-title"> <i class="fa fa-cutlery"></i> 添 加 书 籍</h4>
+		               <h4 class="panel-title"> <i class="fa fa-cutlery"></i> 上传章节</h4>
 		           </div>
 		           <div class="panel-body">
 				       <div class="form-group">
-			                <label class="control-label col-md-3">书籍名称</label>
+			                <label class="control-label col-md-3">章节名称</label>
 			                <div class="col-md-2">
-                              <input type="text" name="book.bookname" class="form-control input-sm" required>
+                              <input type="text" name="chapter.chaptername" class="form-control input-sm" required>
                            </div>
 			           </div>  
+			         
 			           <div class="form-group">
-			                <label class="control-label col-md-3">书籍类型</label>
+			                <label class="control-label col-md-3">章节内容</label>
 			                <div class="col-md-2">
-                              <input type="text" name="book.booktype" class="form-control input-sm" placeholder="&yen;" required>
+                              <input type="text" name="chapter.content" class="form-control input-sm" placeholder="&yen;" required>
                             </div>
-			           </div>
-			           <div class="form-group">
-			                <label class="control-label col-md-3">书籍作者</label>
-			                <div class="col-md-2">
-                              <input type="text" name="book.author" class="form-control input-sm" placeholder="&yen;" required>
-                            </div>
-			           </div>
-			           <div class="form-group">
-			                <label class="control-label col-md-3">书籍单价</label>
-			                <div class="col-md-2">
-                              <input type="text" name="book.unitprice" class="form-control input-sm" placeholder="&yen;" required>
-                            </div>
-			           </div>
-			            <div class="form-group">
-			                <label class="control-label col-md-3">书籍文案</label>
-			                <div class="col-md-2">
-                              <input type="text" name="book.bookwenan" class="form-control input-sm" placeholder="&yen;" required>
-                            </div>
-			           </div>
-			           <div class="form-group">
-			                <label class="control-label col-md-3">书籍图片</label>
-			                <div class="col-md-4">
-                              <div class="fileupload fileupload-new"  data-provides="fileupload">
-                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                   <img src="<%=basePath%>images/1.jpg" alt="" />
-                                </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" 
-                                   style="max-width: 200px; max-height:150px; line-height: 20px;">
-                                </div>
-                                <div>
-                                   <span class="btn btn-file btn-primary"><span class="fileupload-new">浏览</span>
-                                   <span class="fileupload-exists">浏览</span><input type="file" name="bookPhoto"/></span>
-                                   <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">取消</a>
-                                </div>
-                              </div>
-                            </div>
-			           </div>
 			           <div class="form-group col-md-3">
 				          <button type="submit" class="btn btn-success pull-right">提  交 </button>
 				       </div>

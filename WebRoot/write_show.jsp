@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>漫读网~~我的写书</title>
+    <title>漫读网,宁静淡泊的阅读世界~~我的写书</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -45,11 +45,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <main>
 	    <s:form action="write/write_queryWrites" method="post">
-	      
+	    <!-- 
 	      <div>
+	      <s:hidden name="author"></s:hidden>
 	         <s:submit value="查 询" cssClass="search-go"></s:submit>
 	         <input class="search" type="text" name="book.bookname" placeholder="请输入小说书名或关键字">
 	      </div>
+	       -->
 	      <h3>我的作品</h3>
 	      <table>
 	        <tr>  

@@ -1,42 +1,136 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML >
-<html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>漫读网~~用户中心</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-    <link rel="stylesheet" type="text/css" href="<%=basePath%>css/main.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-  </head>
-  
-  <body>
-     <div class="account">
-         <!--  <c:choose>
-		      <c:when test="${user == null}">
-		         <a href="user_reg.jsp">读者注册</a>
-		         <a href="user_login.jsp">读者登录</a>
-		       </c:when>
-		       <c:otherwise> -->
-		       <c:out value="${user.username}"></c:out>, 欢迎您!
-		                     登录账号：<c:out value="${user.userid}"></c:out>
-               <!-- </c:otherwise> 
-		    </c:choose>--> 
-       </div>
-       <p><a href="order_list.jsp">我的书架>></a></p>
-      <p><a href="#">充值记录>></a></p>
-      <p><a href="order_list.jsp">消费记录>></a></p>
-      <p><a href="main.jsp">主页>></a></p>
-  </body>
+<head>
+<meta charset="UTF-8">
+<title>漫读网~~用户中心</title>
+<meta name="keywords" content="个人中心" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="../css/index.css" type="text/css"/>
+<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+<script type="text/javascript" src="../js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!--header start-->
+    <div id="header">
+      <h1>作者个人中心</h1>
+      <p>你当前的位置：作者个人中心</p>    
+    </div>
+     <!--header end-->
+    <!--nav-->
+     <div id="nav">
+    
+        <ul>
+         <li><a href="index.jsp?user=${user}">首页</a></li>
+         <li><a href="<%=basePath%>/about.html">关于我</a></li>
+         <li><a href="#">书籍收藏</a></li>
+         <li><a href="<%=basePath%>/riji.html">书币充值</a></li>
+         <li><a href="<%=basePath%>xc.html">留言板</a></li>
+         <div class="clear"></div>
+        </ul>
+      </div>
+       <!--nav end-->
+    <!--content start-->
+    <div id="content">
+         <!--left-->
+         <div class="left" id="c_left">
+           <div class="s_tuijian">
+           <h2>个人<span>作品书架</span></h2>
+           </div>
+            
+          <div class="content_text">
+          <s:iterator value="orderList" status="status">
+           <div class="wz"> <h3><a href="order/order_showDetail?order.orderid=<s:property value='orderid'/>"><s:property value="book.bookname" /></a>
+				</h3>
+             <dl><s:hidden value="order.orderid"></s:hidden>
+               <dt><img src="<%=basePath%><s:property value='book.picture'/>" width="104px" height="127px"></dt>
+               <dd><s:property value="book.bookwenan"/></p>
+               <p class="dd_text_2">
+               <span class="left author"><s:property value="book.author"/></span><span class="left sj">时间:2014-8-9</span>
+               <span class="left fl">分类:<s:property value="book.booktype"/></span><span class="left yd">
+               <a href="order/order_showDetail?order.orderid=<s:property value='orderid'/>" title="阅读全文">阅读全文</a>
+               </span>
+                <div class="clear"></div>
+               </p>
+               </dd>
+               <div class="clear"></div>
+             </dl>
+            </div>
+        </s:iterator>
+        </div>
+        </div>
+
+         <!--left end-->
+         <!--right-->
+         <div class="right" id="c_right">
+          <div class="s_about">
+          <h2>关于我</h2>
+           <img src="../images/my.jpg" width="180" height="150" alt="博主"/>
+           <p>昵称：<c:out value="${user.username}"></c:out></p>
+           <p>登录账号：<c:out value="${user.userid}"></c:out></p>
+           <p>简介：</p>
+           <p>
+		   </p>
+          </div>
+          <!--栏目分类-->
+           <div class="lanmubox">
+              <div class="hd">
+               <ul><li>精心推荐</li><li>最新文章</li><li class="hd_3">随机文章</li></ul>
+              </div>
+              <div class="bd">
+                <ul>
+					<li><a href="#" title="锦绣未央">锦绣未央</a></li>
+					<li><a href="#" title="青妤记">青妤记</a></li>
+					<li><a href="#" title="卿本妖娆">卿本妖娆</a></li>
+					<li><a href="#" title="婉若昭华">婉若昭华</a></li>
+					<li><a href="#" title="香初上舞">香初上舞</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="锦绣未央">锦绣未央</a></li>
+					<li><a href="#" title="青妤记">青妤记</a></li>
+					<li><a href="#" title="卿本妖娆">卿本妖娆</a></li>
+					<li><a href="#" title="婉若昭华">婉若昭华</a></li>
+					<li><a href="#" title="香初上舞">香初上舞</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="锦绣未央">锦绣未央</a></li>
+					<li><a href="#" title="青妤记">青妤记</a></li>
+					<li><a href="#" title="卿本妖娆">卿本妖娆</a></li>
+					<li><a href="#" title="婉若昭华">婉若昭华</a></li>
+					<li><a href="#" title="香初上舞">香初上舞</a></li>
+				</ul>
+              </div>
+           </div>
+           <!--end-->
+           <div class="link">
+            <h2>友情链接</h2>
+            <p><a href="http://www.duanliang920.com">star 个人博客</a></p>
+           </div>
+         </div>
+         <!--right end-->
+         <div class="clear"></div>
+    </div>
+    <!--content end-->
+    <!--footer start-->
+    <div id="footer">
+     <p>Design by:<a href="http://www.duanliang920.com" target="_blank">少年</a> 2014-8-9</p>
+    </div>
+    <!--footer end-->
+    <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+    <script  type="text/javascript" src="js/nav.js"></script>
+
+</body>
 </html>

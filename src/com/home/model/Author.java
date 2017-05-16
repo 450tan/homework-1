@@ -2,21 +2,11 @@ package com.home.model;
 
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
 
 /**
  * Author entity. @author MyEclipse Persistence Tools
  */
-@Entity
-@Table(name = "t_author", catalog = "giel")
+
 public class Author implements java.io.Serializable {
 
 	// Fields
@@ -25,7 +15,7 @@ public class Author implements java.io.Serializable {
 	private String authorname;
 	private String authorjianjie;
 	private String password;
-	private Set<Write> writes = new HashSet<Write>(0);
+	private Set writes = new HashSet(0);
 
 	// Constructors
 
@@ -40,7 +30,7 @@ public class Author implements java.io.Serializable {
 
 	/** full constructor */
 	public Author(String authorname, String authorjianjie, String password,
-			Set<Write> writes) {
+			Set writes) {
 		this.authorname = authorname;
 		this.authorjianjie = authorjianjie;
 		this.password = password;
@@ -48,10 +38,7 @@ public class Author implements java.io.Serializable {
 	}
 
 	// Property accessors
-	@GenericGenerator(name = "generator", strategy = "increment")
-	@Id
-	@GeneratedValue(generator = "generator")
-	@Column(name = "authorid", unique = true, nullable = false)
+
 	public Integer getAuthorid() {
 		return this.authorid;
 	}
@@ -60,7 +47,6 @@ public class Author implements java.io.Serializable {
 		this.authorid = authorid;
 	}
 
-	@Column(name = "authorname", nullable = false, length = 32)
 	public String getAuthorname() {
 		return this.authorname;
 	}
@@ -69,7 +55,6 @@ public class Author implements java.io.Serializable {
 		this.authorname = authorname;
 	}
 
-	@Column(name = "authorjianjie")
 	public String getAuthorjianjie() {
 		return this.authorjianjie;
 	}
@@ -78,7 +63,6 @@ public class Author implements java.io.Serializable {
 		this.authorjianjie = authorjianjie;
 	}
 
-	@Column(name = "password", length = 32)
 	public String getPassword() {
 		return this.password;
 	}
@@ -87,12 +71,11 @@ public class Author implements java.io.Serializable {
 		this.password = password;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "author")
-	public Set<Write> getWrites() {
+	public Set getWrites() {
 		return this.writes;
 	}
 
-	public void setWrites(Set<Write> writes) {
+	public void setWrites(Set writes) {
 		this.writes = writes;
 	}
 

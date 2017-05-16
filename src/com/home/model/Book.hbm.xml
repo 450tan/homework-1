@@ -11,10 +11,10 @@
             <generator class="increment"></generator>
         </id>
         <property name="bookname" type="java.lang.String">
-            <column name="bookname" length="43" not-null="true" />
+            <column name="bookname" length="43" />
         </property>
         <property name="author" type="java.lang.String">
-            <column name="author" length="32" not-null="true" />
+            <column name="author" length="32" />
         </property>
         <property name="booktype" type="java.lang.String">
             <column name="booktype" length="20" />
@@ -39,13 +39,7 @@
         </set>
         <set name="orders" inverse="true">
             <key>
-                <column name="book" />
-            </key>
-            <one-to-many class="com.home.model.Order" />
-        </set>
-        <set name="orders_1" inverse="true">
-            <key>
-                <column name="book" />
+                <column name="book" not-null="true" />
             </key>
             <one-to-many class="com.home.model.Order" />
         </set>

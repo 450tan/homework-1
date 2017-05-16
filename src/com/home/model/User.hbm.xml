@@ -16,9 +16,9 @@
         <property name="password" type="java.lang.String">
             <column name="password" length="32" />
         </property>
-        <set name="orders" inverse="true">
+        <set name="orders"  inverse="true">
             <key>
-                <column name="user" />
+                <column name="user" not-null="true" />
             </key>
             <one-to-many class="com.home.model.Order" />
         </set>

@@ -40,12 +40,6 @@
      </package>
 	<package name="book" namespace="/book" extends="default">
 		<action name="book_*" class="bookAction" method="{1}">
-		<!-- 	<result name="message" type="chain">
-			<param name="actionName">write_addWrite</param>
-				<param name="namespace">/write</param>
-				<param name="param1">${book.bookid}</param>
-				<param name="param2">${author.authorname}</param>
-			</result> -->
 			<result name="message">/fabiao.jsp</result>
 			<result name="show_view">/main.jsp</result>
 			<result name="detail_view">/detail.jsp</result>
@@ -83,7 +77,7 @@
 	 <package name="order" namespace="/order" extends="default" >
         <action name="order_*" class="orderAction" method="{1}">
             <result name="order_message">/order_message.jsp</result>
-            <result name="show_view">/order_list.jsp</result>
+            <result name="show_view">/usercenter.jsp</result>
             <result name="detail_view">/order_detail.jsp</result>
         </action>  
 	 </package> 
@@ -91,9 +85,19 @@
 	 <package name="write" namespace="/write" extends="default" >
         <action name="write_*" class="writeAction" method="{1}">
             <result name="write_message">/write_message.jsp</result>
-            <result name="show_view">/write_show.jsp</result>
+            <result name="show_view">/authorcenter.jsp</result>
             <result name="detail_view">/write_detail.jsp</result>
         </action>  
+        <action name="book_*" class="bookAction" method="{1}">
+			<result name="message">/fabiao.jsp</result>
+			<result name="show_view">/main.jsp</result>
+			<result name="detail_view">/detail.jsp</result>
+			<result name="edit_view">/editbook.jsp</result>
+			<result name="delete_message">/delete_message.jsp</result>
+			<result name="edit_message">/edit_message.jsp</result>
+			<result name="input">/add_jsp.jsp</result>
+			<result name="success">/detail.jsp</result>
+		</action>
 	 </package> 
 </struts>
 

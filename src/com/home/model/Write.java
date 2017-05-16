@@ -1,20 +1,9 @@
 package com.home.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
-
 /**
  * Write entity. @author MyEclipse Persistence Tools
  */
-@Entity
-@Table(name = "t_write", catalog = "giel")
+
 public class Write implements java.io.Serializable {
 
 	// Fields
@@ -36,10 +25,7 @@ public class Write implements java.io.Serializable {
 	}
 
 	// Property accessors
-	@GenericGenerator(name = "generator", strategy = "increment")
-	@Id
-	@GeneratedValue(generator = "generator")
-	@Column(name = "writeid", unique = true, nullable = false)
+
 	public Integer getWriteid() {
 		return this.writeid;
 	}
@@ -48,8 +34,6 @@ public class Write implements java.io.Serializable {
 		this.writeid = writeid;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "author", nullable = false)
 	public Author getAuthor() {
 		return this.author;
 	}
@@ -58,8 +42,6 @@ public class Write implements java.io.Serializable {
 		this.author = author;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "book", nullable = false)
 	public Book getBook() {
 		return this.book;
 	}

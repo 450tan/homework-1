@@ -2,21 +2,11 @@ package com.home.model;
 
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
 
 /**
  * User entity. @author MyEclipse Persistence Tools
  */
-@Entity
-@Table(name = "t_user", catalog = "giel")
+
 public class User implements java.io.Serializable {
 
 	// Fields
@@ -24,7 +14,7 @@ public class User implements java.io.Serializable {
 	private Integer userid;
 	private String username;
 	private String password;
-	private Set<Order> orders = new HashSet<Order>(0);
+	private Set orders = new HashSet(0);
 
 	// Constructors
 
@@ -33,17 +23,14 @@ public class User implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public User(String username, String password, Set<Order> orders) {
+	public User(String username, String password, Set orders) {
 		this.username = username;
 		this.password = password;
 		this.orders = orders;
 	}
 
 	// Property accessors
-	@GenericGenerator(name = "generator", strategy = "increment")
-	@Id
-	@GeneratedValue(generator = "generator")
-	@Column(name = "userid", unique = true, nullable = false)
+
 	public Integer getUserid() {
 		return this.userid;
 	}
@@ -52,7 +39,6 @@ public class User implements java.io.Serializable {
 		this.userid = userid;
 	}
 
-	@Column(name = "username", length = 32)
 	public String getUsername() {
 		return this.username;
 	}
@@ -61,7 +47,6 @@ public class User implements java.io.Serializable {
 		this.username = username;
 	}
 
-	@Column(name = "password", length = 32)
 	public String getPassword() {
 		return this.password;
 	}
@@ -70,12 +55,11 @@ public class User implements java.io.Serializable {
 		this.password = password;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
-	public Set<Order> getOrders() {
+	public Set getOrders() {
 		return this.orders;
 	}
 
-	public void setOrders(Set<Order> orders) {
+	public void setOrders(Set orders) {
 		this.orders = orders;
 	}
 

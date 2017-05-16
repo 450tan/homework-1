@@ -41,12 +41,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <main>
 	    <s:form action="order/order_queryOrders" method="post">
-	     
+	     <!--
 	      <div>
+	       <s:hidden name="user"></s:hidden>
 	         <s:submit value="查 询" cssClass="search-go"></s:submit>
 	         <input class="search" type="text" name="book.bookname" placeholder="请输入小说书名或关键字">
 	      </div>
-	    
+	    -->
 	      <h3>我的书架</h3>
 	      <table>
 	        <tr>  
